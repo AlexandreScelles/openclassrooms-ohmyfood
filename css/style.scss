@@ -1,5 +1,156 @@
 @import "./reset.css";
 
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+
+body {
+	width: 100%;
+	font-family: "Roboto";
+}
+
+main {
+	max-width: 375px;
+	width: 100%;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Shrinkhand";
+}
+
 a {
 	text-decoration: none;
 }
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	z-index: 999;
+	box-shadow: rgb(0 0 0 / 20%) 0px 5px 5px 0px;
+	margin-bottom: 5px;
+	.logo {
+		width: 50%;
+		margin-top: 12px;
+	}
+}
+
+.primary-section {
+	i {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 100px;
+		font-size: 17px;
+	}
+	.location-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40%;
+		font-weight: 500;
+		font-size: 16px;
+	}
+	.location {
+		display: flex;
+		width: 100%;
+		height: 40px;
+		background-color: rgb(234, 234, 234);
+	}
+	.corp-desc {
+		background-color: rgb(246, 246, 246);
+		padding-bottom: 60px;
+		&_content {
+			padding-top: 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			h1 {
+				font-weight: bold;
+				font-size: 24px;
+				flex-wrap: wrap;
+				width: 70%;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			p {
+				text-align: center;
+				width: 90%;
+				font-size: 18px;
+				margin-bottom: 30px;
+				font-weight: 300;
+			}
+			.explore-btn {
+				color: #fff;
+				background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+				padding: 15px 20px;
+				border-radius: 30px;
+				box-shadow: rgb(0 0 0 / 30%) 0px 2px 10px 0px;
+			}
+		}
+	}
+}
+
+
+.secondary-section {
+	margin-top: 60px;
+	.fonctioning-container {
+		h2 {
+			font-weight: bold;
+			font-size: 24px;
+			margin-left: 16px;
+		}
+		.choose-container {
+			margin-top: 30px;
+			margin-bottom: 60px;
+			margin-left: 30px;
+		}
+		.choose {
+			width: 320px;
+			margin-top: 30px;
+			display: flex;
+			align-items: center;
+			border: 1px solid transparent;
+			border-radius: 20px;
+			padding: 20px;
+			position: relative;
+			background-color: rgb(246, 246, 246);
+			&:hover {
+				background-color: #F5EDFF;
+				.icon {
+					color: $primary;
+				}
+			}
+		}
+		.bubble {
+			left: -10px;
+			margin-right: 30px;
+			padding: 12px;
+			border: 1px transparent;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 10px;
+			background-color: $primary;
+			color: #fff;
+			position: absolute;
+		}
+		.icon {
+			margin-left: 10px;
+			margin-right: 20px;
+			font-size: 20px;
+			color: rgb(126, 126, 126);
+		}
+		p {
+			font-weight: bold;
+			font-size: 16px;
+		}
+	}
+}
+
