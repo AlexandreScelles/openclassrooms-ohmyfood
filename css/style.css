@@ -197,4 +197,76 @@ header .logo {
 .store-container .card-container .card a img {
   position: absolute;
   bottom: 70px;
+}
+.store-container .card-container .card a h4 {
+  position: absolute;
+  bottom: 34px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 14px;
+}
+.store-container .card-container .card a .city {
+  position: absolute;
+  bottom: 14px;
+  color: black;
+  font-size: 15px;
+  padding-left: 14px;
+}
+.store-container .card-container .card i {
+  display: block;
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+  font-size: 25px;
+  background: -webkit-linear-gradient(blue, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 1s ease-in-out;
+}
+.store-container .card-container .card i:hover + .active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(5.1, 5.1);
+  opacity: 1;
+}
+.store-container .card-container .card i.active {
+  background: -webkit-linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  display: block;
+  font-weight: 600;
+  position: absolute;
+  bottom: 34px;
+  right: 40px;
+  font-size: 5px !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+
+footer {
+  background-color: rgb(53, 53, 53);
+}
+footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+footer .footer-container .logo-footer {
+  width: 130px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+footer .footer-container a {
+  color: #fff;
+  margin-bottom: 10px;
+}
+footer .footer-container a .fa-utensils {
+  font-size: 12px;
+  padding-right: 10px;
+}
+footer .footer-container a .fa-handshake-angle {
+  font-size: 12px;
+  padding-right: 5px;
 }/*# sourceMappingURL=style.css.map */

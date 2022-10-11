@@ -4,6 +4,7 @@ $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 
+
 body {
 	width: 100%;
 	font-family: "Roboto";
@@ -226,6 +227,86 @@ header {
 			a img {
 				position: absolute;
 				bottom: 70px;
+			}
+
+			a h4 {
+				position: absolute;
+				bottom: 34px;
+				text-decoration: none;
+				color: black;
+				font-size: 18px;
+				font-weight: bold;
+				padding-left: 14px;
+			}
+
+			a .city {
+				position: absolute;
+				bottom: 14px;
+				color: black;
+				font-size: 15px;
+				padding-left: 14px;
+			}
+
+			i {
+				display: block;
+				position: absolute;
+				bottom: 25px;
+				right: 30px;
+				font-size: 25px;
+				background: -webkit-linear-gradient(blue, #333);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: all 1.0s ease-in-out;
+				&:hover + .active {
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					transform: scale(5.1, 5.1);
+					opacity: 1;
+				}
+				&.active {
+					background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+					display: block;
+					font-weight: 600;
+					position: absolute;
+					bottom: 34px;
+					right: 40px;
+					font-size: 5px!important;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					transition: all 1.0s ease-in-out;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	background-color: rgb(53, 53, 53);
+
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		margin-left: 20px;
+
+		.logo-footer {
+			width: 130px;
+			margin-top: 30px;
+			margin-bottom: 15px;
+		}
+
+		a {
+			color: #fff;
+			margin-bottom: 10px;
+
+			.fa-utensils {
+				font-size: 12px;
+				padding-right: 10px;
+			}
+
+			.fa-handshake-angle {
+				font-size: 12px;
+				padding-right: 5px;
 			}
 		}
 	}
