@@ -1,0 +1,16 @@
+@mixin card-title {
+    position: absolute;
+    bottom: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 20px;
+}
+@mixin loc-name {
+    position: absolute;
+    bottom: 30px;
+    color: black;
+    font-size: 15px;
+    padding-left: 20px;
+}

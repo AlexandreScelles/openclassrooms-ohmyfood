@@ -1,10 +1,12 @@
-@import "./reset.css";
+@use "./_reset.scss";
+@use "./mixins";
+@use "./header-footer.scss";
 
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 
-
+// H O M E    P A G E //
 body {
 	width: 100%;
 	font-family: "Roboto";
@@ -19,7 +21,7 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: "Shrinkhand";
+	font-family: "Shrikhand";
 }
 
 a {
@@ -42,7 +44,7 @@ header {
 	}
 }
 
-.primary-section {
+.location-section {
 	i {
 		display: flex;
 		justify-content: center;
@@ -78,7 +80,7 @@ header {
 			justify-content: center;
 			align-items: center;
 
-			h1 {
+			.reserved {
 				font-weight: bold;
 				font-size: 24px;
 				flex-wrap: wrap;
@@ -107,11 +109,11 @@ header {
 }
 
 
-.secondary-section {
+.fonctioning-section {
 	margin-top: 60px;
 
 	.fonctioning-container {
-		h2 {
+		.function-title {
 			font-weight: bold;
 			font-size: 24px;
 			margin-left: 16px;
@@ -135,6 +137,12 @@ header {
 			background-color: rgb(246, 246, 246);
 			box-shadow: rgb(0 0 0 / 20%) 0px 2px 10px 0px;
 
+			p {
+				font-weight: bold;
+				font-size: 16px;
+				margin-left: 5px;
+			}
+
 			&:hover {
 				background-color: #F5EDFF;
 
@@ -145,7 +153,7 @@ header {
 		}
 
 		.bubble {
-			left: -10px;
+			left: -12px;
 			margin-right: 30px;
 			padding: 12px;
 			border: 1px transparent;
@@ -175,106 +183,111 @@ header {
 	}
 }
 
-.store-container {
+.store-section {
 	background-color: rgb(246, 246, 246);
+	padding-bottom: 50px;
 
-	a {
-		width: 100%;
-		height: 100%;
-		cursor: pointer;
-	}
 
-	h3 {
-		font-weight: bold;
-		font-size: 24px;
-		margin-left: 16px;
-		padding-top: 50px;
-	}
+	.store-container {
 
-	.new {
-		width: 90px;
-		z-index: 1;
-		padding: 4px;
-		background-color: #99E2D0;
-		color: rgb(38, 157, 128);
-		border-radius: 2px;
-		display: flex;
-		justify-content: center;
-		font-weight: bold;
-		font-size: 16px;
-		position: absolute;
-		top: 20px;
-		right: 20px;
-	}
+		a {
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
 
-	.card-container {
-		display: flex;
-		flex-direction: column;
+		.store {
+			font-weight: bold;
+			font-size: 24px;
+			margin-left: 16px;
+			padding-top: 50px;
+		}
 
-		.card {
+		.new {
+			width: 90px;
+			z-index: 1;
+			padding: 4px;
+			background-color: #99E2D0;
+			color: rgb(38, 157, 128);
+			border-radius: 2px;
 			display: flex;
 			justify-content: center;
-			width: 90%;
-			overflow: hidden;
-			background: #FFFFFF;
-			border-radius: 20px;
-			box-sizing: border-box;
-			margin-top: 20px;
-			position: relative;
-			margin-left: 20px;
-			height: 250px;
+			font-weight: bold;
+			font-size: 16px;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
 
-			a img {
-				position: absolute;
-				bottom: 70px;
-			}
+		.card-container {
+			display: flex;
+			flex-direction: column;
 
-			a h4 {
-				position: absolute;
-				bottom: 34px;
-				text-decoration: none;
-				color: black;
-				font-size: 18px;
-				font-weight: bold;
-				padding-left: 14px;
-			}
+			.card {
+				display: flex;
+				justify-content: center;
+				width: 90%;
+				overflow: hidden;
+				background: #FFFFFF;
+				border-radius: 20px;
+				box-sizing: border-box;
+				margin-top: 20px;
+				position: relative;
+				margin-left: 20px;
+				height: 250px;
 
-			a .city {
-				position: absolute;
-				bottom: 14px;
-				color: black;
-				font-size: 15px;
-				padding-left: 14px;
-			}
-
-			i {
-				display: block;
-				position: absolute;
-				bottom: 25px;
-				right: 30px;
-				font-size: 25px;
-				background: -webkit-linear-gradient(blue, #333);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				transition: all 1.0s ease-in-out;
-				&:hover + .active {
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-					transform: scale(5.1, 5.1);
-					opacity: 1;
-				}
-				&.active {
-					background: -webkit-linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
-					display: block;
-					font-weight: 600;
+				a img {
 					position: absolute;
-					bottom: 34px;
-					right: 40px;
-					font-size: 5px!important;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-					transition: all 1.0s ease-in-out;
-					opacity: 0;
+					bottom: 70px;
+					&.enchanted-img {
+						bottom: -28px;
+					}
+				}
+				.card-desc {
+					position: absolute;
+					top: 180px;
+					width: 100%;
+					height: 33%;
+					background: #fff;
+
+					.store-name {
+						@include mixins.card-title();
+					}
+
+					.city {
+						@include mixins.loc-name();
+					}
+
+					i {
+						display: block;
+						position: absolute;
+						bottom: 40px;
+						right: 30px;
+						font-size: 25px;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: black;
+						transition: all 1.0s ease-in-out;
+					}
+
+					.fas {
+						background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+						display: block;
+						font-weight: 600;
+						position: absolute;
+						bottom: 40px;
+						right: 30px;
+						font-size: 25px;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+						transition: all .4s ease-in-out;
+						opacity: 0;
+
+						&:hover {
+							-webkit-background-clip: text;
+							-webkit-text-fill-color: transparent;
+							opacity: 1;
+						}
+					}
 				}
 			}
 		}
@@ -293,6 +306,12 @@ footer {
 			width: 130px;
 			margin-top: 30px;
 			margin-bottom: 15px;
+
+			p {
+				font-family: 'shrikhand';
+				font-size: 20px;
+				color: #fff;
+			}
 		}
 
 		a {
@@ -310,4 +329,15 @@ footer {
 			}
 		}
 	}
+}
+
+// A LA FRANCAISE PAGE //
+
+.return_button {
+	position: absolute;
+	left: 20px;
+	top: 22px;
+	border: none;
+	background: white;
+	font-size: 20px;
 }
