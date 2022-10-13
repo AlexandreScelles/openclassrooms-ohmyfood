@@ -1,0 +1,34 @@
+@keyframes appear {
+	0% {
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes check-spin {
+	from {
+		transform: rotate(-270deg);
+	}
+	to {
+		transform: rotate(0);
+	}
+}
+@keyframes check-slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+@keyframes price-translate {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translate(-120%);
+	}
+}

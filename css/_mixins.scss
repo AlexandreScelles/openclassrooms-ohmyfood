@@ -43,3 +43,15 @@
 		opacity: 1;
 	}
 }
+@mixin biggest-check($height) {
+	width: 16%;
+	height: $height;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: -55px;
+	top: 0px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}

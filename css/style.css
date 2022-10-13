@@ -123,6 +123,75 @@ footer .footer-container a .fa-handshake-angle {
   padding-right: 5px;
 }
 
+@-webkit-keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes check-spin {
+  from {
+    transform: rotate(-270deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes check-spin {
+  from {
+    transform: rotate(-270deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes check-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes check-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes price-translate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-120%);
+  }
+}
+@keyframes price-translate {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-120%);
+  }
+}
 body {
   width: 100%;
   font-family: "Roboto";
@@ -411,6 +480,7 @@ header {
   background: white;
   font-size: 20px;
   cursor: pointer;
+  color: black;
 }
 
 .background {
@@ -496,10 +566,66 @@ header {
   margin-top: 14px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 0px;
   background-color: #fff;
+  -webkit-animation: appear 1s;
+          animation: appear 1s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.food-section .food-card:hover .checkmark {
+  -webkit-animation: check-slide 0.6s;
+          animation: check-slide 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.food-section .food-card:hover i {
+  -webkit-animation: check-spin 0.6s;
+          animation: check-spin 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.food-section .food-card:hover .food-price {
+  -webkit-animation: price-translate 0.6s;
+          animation: price-translate 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.food-section .food-card:hover .food-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  width: 65%;
+  overflow: hidden;
+}
+.food-section .food-card .checkmark {
+  width: 16%;
+  display: flex;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -55px;
+  top: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #99E2D0;
+}
+.food-section .food-card .checkmark.big-checkmark {
+  height: 78px;
+}
+.food-section .food-card .checkmark i {
+  color: #99E2D0;
+  padding: 3px;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: #fff;
 }
 .food-section .food-card .food-title {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
+  flex-wrap: wrap;
+  width: 80%;
 }
 .food-section .food-card .food-desc {
   font-size: 14px;
