@@ -322,6 +322,7 @@ header .logo {
   position: relative;
   margin-left: 20px;
   height: 250px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px;
 }
 .store-section .store-container .card-container .card a img {
   position: absolute;
