@@ -1,3 +1,10 @@
+@mixin btn($padding) {
+	color: #fff;
+	background: linear-gradient(0deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+	padding: $padding;
+	border-radius: 30px;
+	box-shadow: rgb(0 0 0 / 30%) 0px 2px 10px 0px;
+}
 @mixin card-title {
     position: absolute;
     bottom: 50px;
@@ -13,4 +20,26 @@
     color: black;
     font-size: 15px;
     padding-left: 20px;
+}
+@mixin flex-align-center($justify-content) {
+	display: flex;
+    justify-content: $justify-content;
+    align-items: center;
+}
+@mixin hover-heart($right) {
+	background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+	display: block;
+	font-weight: 600;
+	position: absolute;
+	right: $right;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all .4s ease-in-out;
+	opacity: 0;
+
+	&:hover {
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		opacity: 1;
+	}
 }
