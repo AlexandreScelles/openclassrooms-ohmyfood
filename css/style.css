@@ -89,7 +89,7 @@ header {
   background-color: #fff;
   z-index: 1;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1180px) {
   header {
     height: 100px;
   }
@@ -112,7 +112,7 @@ header .return_button {
   cursor: pointer;
   color: black;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1180px) {
   header .return_button {
     top: 40px;
   }
@@ -279,6 +279,11 @@ main {
     width: 20%;
   }
 }
+@media screen and (min-width: 1180px) {
+  .location-section .location-title {
+    width: 10%;
+  }
+}
 
 .location {
   display: flex;
@@ -346,7 +351,7 @@ main {
     align-items: center;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1180px) {
   .fonctioning-section .fonctioning-container .choose-container {
     flex-direction: row;
     justify-content: space-around;
@@ -555,6 +560,18 @@ footer .footer-container a .fa-handshake-angle {
   padding-right: 5px;
 }
 
+.background {
+  position: relative;
+  height: 250px;
+}
+
+.background-img {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .order {
   display: flex;
   justify-content: center;
@@ -608,10 +625,9 @@ footer .footer-container a .fa-handshake-angle {
   -webkit-text-fill-color: transparent;
   opacity: 1;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1180px) {
   .food-section .menu-selection {
     display: flex;
-    align-items: center;
     justify-content: space-between;
   }
   .food-section .menu-selection .entries,
@@ -706,4 +722,32 @@ footer .footer-container a .fa-handshake-angle {
   position: absolute;
   right: 30px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .background {
+    position: relative;
+    height: 700px;
+  }
+  .background-img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media screen and (min-width: 1180px) {
+  .background {
+    position: relative;
+    height: 700px;
+  }
+  .french-bg {
+    height: 600px;
+  }
+  .background-img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }/*# sourceMappingURL=style.css.map */

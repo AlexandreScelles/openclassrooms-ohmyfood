@@ -53,6 +53,10 @@ main {
 		@media screen and (min-width: 768px) {
 			width: 20%;
 		}
+
+		@media screen and (min-width: 1180px) {
+			width: 10%;
+		}
 	}
 }
 
@@ -124,7 +128,7 @@ main {
 				align-items: center;
 			}
 
-			@media screen and (min-width: 992px) {
+			@media screen and (min-width: 1180px) {
 				flex-direction: row;
 				justify-content: space-around;
 			}
@@ -250,70 +254,70 @@ main {
 			box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px 0px;
 
 			@media screen and (min-width: 768px) {
-					width: 45%;
-				}
+				width: 45%;
 			}
+		}
 
-			a img {
-				position: absolute;
-				top: 30%;
+		a img {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			&.enchanted-img {
+				top: 25%;
 				left: 50%;
 				transform: translate(-50%, -50%);
+			}
+		}
 
-				&.enchanted-img {
-					top: 25%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-				}
+		.card-desc {
+			position: absolute;
+			top: 180px;
+			width: 100%;
+			height: 33%;
+			background: #fff;
+
+			.store-name {
+				@include mixins.card-title();
 			}
 
-			.card-desc {
+			.city {
+				@include mixins.loc-name();
+			}
+
+			i {
+				display: block;
 				position: absolute;
-				top: 180px;
-				width: 100%;
-				height: 33%;
-				background: #fff;
+				bottom: 40px;
+				right: 30px;
+				font-size: 25px;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: black;
+			}
 
-				.store-name {
-					@include mixins.card-title();
-				}
+			.fas {
+				background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+				display: block;
+				font-weight: 600;
+				position: absolute;
+				bottom: 40px;
+				right: 30px;
+				font-size: 25px;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				transition: all .4s ease-in-out;
+				opacity: 0;
 
-				.city {
-					@include mixins.loc-name();
-				}
-
-				i {
-					display: block;
-					position: absolute;
-					bottom: 40px;
-					right: 30px;
-					font-size: 25px;
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: black;
-				}
-
-				.fas {
-					background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
-					display: block;
-					font-weight: 600;
-					position: absolute;
-					bottom: 40px;
-					right: 30px;
-					font-size: 25px;
+				&:hover {
 					-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;
-					transition: all .4s ease-in-out;
-					opacity: 0;
-
-					&:hover {
-						-webkit-background-clip: text;
-						-webkit-text-fill-color: transparent;
-						opacity: 1;
-					}
+					opacity: 1;
 				}
 			}
 		}
 	}
+}
 
 footer {
 	background-color: rgb(53, 53, 53);
@@ -353,6 +357,17 @@ footer {
 }
 
 // RESTAURANT PAGE //
+.background {
+	position: relative;
+	height: 250px;
+}
+
+.background-img {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 
 .order {
 	display: flex;
@@ -391,10 +406,9 @@ footer {
 		}
 	}
 
-	@media screen and (min-width: 992px) {
+	@media screen and (min-width: 1180px) {
 		.menu-selection {
 			display: flex;
-			align-items: center;
 			justify-content: space-between;
 
 			.entries,
@@ -497,5 +511,37 @@ footer {
 			right: 30px;
 			font-weight: bold;
 		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.background {
+		position: relative;
+		height: 700px;
+	}
+
+	.background-img {
+		position: absolute;
+		top: 35%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@media screen and (min-width: 1180px) {
+	.background {
+		position: relative;
+		height: 700px;
+	}
+
+	.french-bg {
+		height: 600px;
+	}
+
+	.background-img {
+		position: absolute;
+		top: 25%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
