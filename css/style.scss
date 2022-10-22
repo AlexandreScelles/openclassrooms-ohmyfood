@@ -8,15 +8,6 @@ $secondary: #FF79DA;
 $tertiary: #99E2D0;
 
 // H O M E    P A G E //
-body {
-	width: 100%;
-	font-family: "Roboto";
-}
-
-main {
-	max-width: 375px;
-	width: 100%;
-}
 
 h1,
 h2,
@@ -29,6 +20,15 @@ a {
 	text-decoration: none;
 }
 
+body {
+	width: 100%;
+	font-family: "Roboto";
+}
+
+main {
+	width: 100%;
+}
+
 .location-section {
 	i {
 		display: flex;
@@ -36,6 +36,10 @@ a {
 		align-items: center;
 		margin-left: 100px;
 		font-size: 17px;
+
+		@media screen and (min-width: 768px) {
+			margin-left: 0;
+		}
 	}
 
 	.location-title {
@@ -45,49 +49,58 @@ a {
 		width: 40%;
 		font-weight: 500;
 		font-size: 16px;
-	}
 
-	.location {
-		display: flex;
-		width: 100%;
-		height: 40px;
-		background-color: rgb(234, 234, 234);
-	}
-
-	.corp-desc {
-		background-color: rgb(246, 246, 246);
-		padding-bottom: 60px;
-
-		&_content {
-			padding-top: 30px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-
-			.reserved {
-				font-weight: bold;
-				font-size: 24px;
-				flex-wrap: wrap;
-				width: 70%;
-				text-align: center;
-				margin-bottom: 10px;
-			}
-
-			p {
-				text-align: center;
-				width: 90%;
-				font-size: 18px;
-				margin-bottom: 30px;
-				font-weight: 300;
-			}
-
-			.explore-btn {
-				@include mixins.btn(15px 20px);
-			}
+		@media screen and (min-width: 768px) {
+			width: 20%;
 		}
 	}
 }
+
+.location {
+	display: flex;
+	width: 100%;
+	height: 40px;
+	background-color: rgb(234, 234, 234);
+
+	@media screen and (min-width: 768px) {
+		justify-content: center;
+	}
+}
+
+.corp-desc {
+	background-color: rgb(246, 246, 246);
+	padding-bottom: 60px;
+
+	&_content {
+		padding-top: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.reserved {
+			font-weight: bold;
+			font-size: 24px;
+			flex-wrap: wrap;
+			width: 70%;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		p {
+			text-align: center;
+			width: 90%;
+			font-size: 18px;
+			margin-bottom: 30px;
+			font-weight: 300;
+		}
+
+		.explore-btn {
+			@include mixins.btn(15px 20px);
+		}
+	}
+}
+
 
 
 .fonctioning-section {
@@ -104,6 +117,17 @@ a {
 			margin-top: 30px;
 			margin-bottom: 60px;
 			margin-left: 30px;
+
+			@media screen and (min-width: 768px) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			@media screen and (min-width: 992px) {
+				flex-direction: row;
+				justify-content: space-around;
+			}
 		}
 
 		.choose {
@@ -204,78 +228,92 @@ a {
 			display: flex;
 			flex-direction: column;
 
-			.card {
-				display: flex;
+			@media screen and (min-width: 768px) {
+				flex-direction: row;
+				flex-wrap: wrap;
 				justify-content: center;
-				width: 90%;
-				overflow: hidden;
-				background: #FFFFFF;
-				border-radius: 20px;
-				box-sizing: border-box;
-				margin-top: 20px;
-				position: relative;
-				margin-left: 20px;
-				height: 250px;
-				box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px 0px;
+			}
+		}
 
-				a img {
-					position: absolute;
-					bottom: 70px;
+		.card {
+			display: flex;
+			justify-content: center;
+			width: 90%;
+			overflow: hidden;
+			background: #FFFFFF;
+			border-radius: 20px;
+			box-sizing: border-box;
+			margin-top: 20px;
+			position: relative;
+			margin-left: 20px;
+			height: 250px;
+			box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px 0px;
 
-					&.enchanted-img {
-						bottom: -28px;
-					}
+			@media screen and (min-width: 768px) {
+					width: 45%;
+				}
+			}
+
+			a img {
+				position: absolute;
+				top: 30%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				&.enchanted-img {
+					top: 25%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+
+			.card-desc {
+				position: absolute;
+				top: 180px;
+				width: 100%;
+				height: 33%;
+				background: #fff;
+
+				.store-name {
+					@include mixins.card-title();
 				}
 
-				.card-desc {
+				.city {
+					@include mixins.loc-name();
+				}
+
+				i {
+					display: block;
 					position: absolute;
-					top: 180px;
-					width: 100%;
-					height: 33%;
-					background: #fff;
+					bottom: 40px;
+					right: 30px;
+					font-size: 25px;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: black;
+				}
 
-					.store-name {
-						@include mixins.card-title();
-					}
+				.fas {
+					background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
+					display: block;
+					font-weight: 600;
+					position: absolute;
+					bottom: 40px;
+					right: 30px;
+					font-size: 25px;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					transition: all .4s ease-in-out;
+					opacity: 0;
 
-					.city {
-						@include mixins.loc-name();
-					}
-
-					i {
-						display: block;
-						position: absolute;
-						bottom: 40px;
-						right: 30px;
-						font-size: 25px;
-						-webkit-background-clip: text;
-						-webkit-text-fill-color: black;
-					}
-
-					.fas {
-						background: -webkit-linear-gradient(270deg, rgba(147, 86, 220, 1) 0%, rgba(255, 121, 218, 1) 100%);
-						display: block;
-						font-weight: 600;
-						position: absolute;
-						bottom: 40px;
-						right: 30px;
-						font-size: 25px;
+					&:hover {
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
-						transition: all .4s ease-in-out;
-						opacity: 0;
-
-						&:hover {
-							-webkit-background-clip: text;
-							-webkit-text-fill-color: transparent;
-							opacity: 1;
-						}
+						opacity: 1;
 					}
 				}
 			}
 		}
 	}
-}
 
 footer {
 	background-color: rgb(53, 53, 53);
@@ -316,31 +354,6 @@ footer {
 
 // RESTAURANT PAGE //
 
-header {
-	margin-bottom: 0px;
-}
-
-.return_button {
-	position: absolute;
-	left: 20px;
-	top: 22px;
-	border: none;
-	background: white;
-	font-size: 20px;
-	cursor: pointer;
-	color: black;
-}
-
-.background {
-	height: 250px;
-	position: relative;
-
-	.background-img {
-		position: absolute;
-		top: -120px;
-	}
-}
-
 .order {
 	display: flex;
 	justify-content: center;
@@ -378,6 +391,20 @@ header {
 		}
 	}
 
+	@media screen and (min-width: 992px) {
+		.menu-selection {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.entries,
+			.dish,
+			.dessert {
+				width: 30%;
+			}
+		}
+	}
+
 	.category {
 		margin-top: 30px;
 
@@ -404,6 +431,7 @@ header {
 		animation: appear 1s;
 		overflow: hidden;
 		cursor: pointer;
+
 		&:hover {
 			.checkmark {
 				animation: check-slide .6s;
@@ -414,10 +442,12 @@ header {
 				animation: check-spin .6s;
 				animation-fill-mode: forwards;
 			}
+
 			.food-price {
 				animation: price-translate .6s;
 				animation-fill-mode: forwards;
 			}
+
 			.food-desc {
 				display: -webkit-box;
 				-webkit-line-clamp: 1;
@@ -429,20 +459,18 @@ header {
 		}
 
 		.checkmark {
-			width: 16%;
+			width: 50px;
 			display: flex;
-			height: 58px;
+			height: 100%;
 			justify-content: center;
 			align-items: center;
 			position: absolute;
-			right: -55px;
+			right: -50px;
 			top: 0px;
 			border-top-right-radius: 10px;
 			border-bottom-right-radius: 10px;
 			background-color: $tertiary;
-			 &.big-checkmark {
-				height: 78px;
-			 }
+
 			i {
 				color: $tertiary;
 				padding: 3px;
