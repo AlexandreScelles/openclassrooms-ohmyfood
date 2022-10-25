@@ -234,6 +234,134 @@ footer .footer-container a .fa-handshake-angle {
     transform: translate(-120%);
   }
 }
+.loader-container {
+  background: #99E2D0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  -webkit-animation: 300ms ease-in-out 3s disappear forwards;
+          animation: 300ms ease-in-out 3s disappear forwards;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: "Shrikhand";
+  font-size: 20px;
+  color: #9356DC;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #99E2D0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.ring:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #9356DC;
+  border-right: 3px solid #9356DC;
+  border-radius: 50%;
+  -webkit-animation: animateC 2s linear infinite;
+          animation: animateC 2s linear infinite;
+}
+
+span {
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+}
+
+span:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #99E2D0;
+  top: -6px;
+  right: -8px;
+  box-shadow: 0 0 20px #99E2D0;
+}
+
+@-webkit-keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 h1,
 h2,
 h3,
