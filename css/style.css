@@ -467,6 +467,12 @@ main {
   font-size: 24px;
   margin-left: 16px;
 }
+@media screen and (min-width: 768px) {
+  .fonctioning-section .fonctioning-container .function-title {
+    display: flex;
+    justify-content: center;
+  }
+}
 .fonctioning-section .fonctioning-container .choose-container {
   margin-top: 30px;
   margin-bottom: 60px;
@@ -855,7 +861,7 @@ footer .footer-container a .fa-handshake-angle {
 @media screen and (min-width: 768px) {
   .background {
     position: relative;
-    height: 700px;
+    height: 500px;
   }
   .background-img {
     position: absolute;

@@ -116,6 +116,10 @@ main {
 			font-weight: bold;
 			font-size: 24px;
 			margin-left: 16px;
+			@media screen and (min-width: 768px) {
+				display: flex;
+				justify-content: center;
+			}
 		}
 
 		.choose-container {
@@ -518,7 +522,7 @@ footer {
 @media screen and (min-width: 768px) {
 	.background {
 		position: relative;
-		height: 700px;
+		height: 500px;
 	}
 
 	.background-img {
